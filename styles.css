@@ -1,0 +1,237 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+/* Navigation Styles */
+.nav-link {
+    @apply text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors font-medium relative;
+}
+
+.nav-link.active {
+    @apply text-primary-600 dark:text-primary-400;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(to right, #1890ff, #fa8c16);
+    transition: width 0.3s ease;
+}
+
+.nav-link.active::after,
+.nav-link:hover::after {
+    width: 100%;
+}
+
+/* Button Styles */
+.btn-primary {
+    @apply inline-flex items-center px-8 py-3 bg-gradient-to-r from-primary-600 to-accent-500 text-white font-semibold rounded-xl hover:shadow-lg hover:shadow-primary-500/50 transition-all duration-300 hover:-translate-y-0.5;
+}
+
+.btn-secondary {
+    @apply inline-flex items-center px-8 py-3 border-2 border-primary-600 dark:border-primary-400 text-primary-600 dark:text-primary-400 font-semibold rounded-xl hover:bg-primary-50 dark:hover:bg-primary-900/20 transition-all duration-300;
+}
+
+/* Social Link Styles */
+.social-link {
+    @apply w-12 h-12 flex items-center justify-center rounded-full bg-gray-100 dark:bg-gray-800 hover:bg-primary-100 dark:hover:bg-primary-900/30 text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg;
+}
+
+.social-link-small {
+    @apply w-10 h-10 flex items-center justify-center rounded-full bg-gray-200 dark:bg-gray-800 hover:bg-primary-100 dark:hover:bg-primary-900/30 text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-all duration-300 hover:-translate-y-1;
+}
+
+/* Card Styles */
+.stat-card {
+    @apply bg-white dark:bg-gray-700 rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-2;
+}
+
+.project-card {
+    @apply bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-md hover:shadow-2xl transition-all duration-300 hover:-translate-y-2;
+}
+
+.skill-card {
+    @apply bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border border-gray-100 dark:border-gray-700;
+}
+
+/* Tech Badge */
+.tech-badge {
+    @apply inline-block px-3 py-1 text-sm bg-primary-50 dark:bg-primary-900/20 text-primary-700 dark:text-primary-300 rounded-full font-medium;
+}
+
+/* Timeline Styles */
+.timeline-item {
+    @apply relative pl-8 pb-12 border-l-2 border-primary-200 dark:border-primary-800;
+}
+
+.timeline-item:last-child {
+    @apply pb-0;
+}
+
+.timeline-dot {
+    @apply absolute -left-2.5 top-0 w-5 h-5 rounded-full bg-primary-500 border-4 border-white dark:border-gray-900;
+}
+
+.timeline-content {
+    @apply bg-white dark:bg-gray-800 rounded-xl p-6 shadow-md hover:shadow-lg transition-shadow;
+}
+
+/* Footer Styles */
+.footer-link {
+    @apply text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors;
+}
+
+/* Form Styles */
+.form-input {
+    @apply w-full px-4 py-3 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all;
+}
+
+.form-textarea {
+    @apply w-full px-4 py-3 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all resize-none;
+}
+
+.form-label {
+    @apply block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2;
+}
+
+/* Blog Card Styles */
+.blog-card {
+    @apply bg-white dark:bg-gray-800 rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-2;
+}
+
+.blog-image {
+    @apply w-full h-48 object-cover;
+}
+
+.blog-category {
+    @apply inline-block px-3 py-1 text-xs bg-accent-100 dark:bg-accent-900/30 text-accent-700 dark:text-accent-300 rounded-full font-medium;
+}
+
+/* Skill Progress Bar */
+.skill-progress {
+    @apply h-2 bg-gray-200 dark:bg-gray-700 rounded-full overflow-hidden;
+}
+
+.skill-progress-bar {
+    @apply h-full bg-gradient-to-r from-primary-500 to-accent-500 rounded-full transition-all duration-1000;
+}
+
+/* Page Section Styles */
+.page-header {
+    @apply pt-32 pb-20 px-6 bg-gradient-to-br from-primary-50 to-accent-50 dark:from-gray-900 dark:to-gray-800;
+}
+
+.page-title {
+    @apply text-4xl md:text-6xl font-outfit font-bold mb-6 bg-gradient-to-r from-primary-600 to-accent-500 bg-clip-text text-transparent;
+}
+
+.page-subtitle {
+    @apply text-lg md:text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-fade-in-up {
+    animation: fadeInUp 0.6s ease-out forwards;
+}
+
+@keyframes pulse-slow {
+
+    0%,
+    100% {
+        opacity: 0.3;
+    }
+
+    50% {
+        opacity: 0.5;
+    }
+}
+
+.animate-pulse-slow {
+    animation: pulse-slow 4s ease-in-out infinite;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+.dark ::-webkit-scrollbar-track {
+    background: #1f2937;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(to bottom, #1890ff, #fa8c16);
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(to bottom, #096dd9, #d46b08);
+}
+
+/* Utility Classes */
+.gradient-text {
+    @apply bg-gradient-to-r from-primary-600 to-accent-500 bg-clip-text text-transparent;
+}
+
+.glass-effect {
+    @apply bg-white/70 dark:bg-gray-900/70 backdrop-blur-md;
+}
+
+/* Responsive Typography */
+@media (max-width: 640px) {
+    .page-title {
+        @apply text-3xl;
+    }
+
+    .page-subtitle {
+        @apply text-base;
+    }
+}
+
+/* Print Styles */
+@media print {
+
+    nav,
+    footer,
+    .social-link,
+    .btn-primary,
+    .btn-secondary {
+        display: none;
+    }
+
+    body {
+        background: white;
+        color: black;
+    }
+}
